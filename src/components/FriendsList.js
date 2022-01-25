@@ -3,6 +3,21 @@ import styled from 'styled-components';
 
 import axiosWithAuth from './../utils/axiosWithAuth';
 
+const StyledDiv = styled.div`
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    h1 {
+        margin-bottom: 1%;
+    }
+    .friends-container {
+        width: 75%;
+        margin: 0 auto;
+        margin-left: 30%;
+        font-weight: bold;
+    }
+`
+
 class FriendsList extends React.Component {
     state = {
         friends: []
@@ -24,7 +39,7 @@ class FriendsList extends React.Component {
 
     render() {
         return (
-            <div>
+            <StyledDiv>
                 <h1>FRIENDS LIST</h1>
                 <div className='friends-container'>
                 {
@@ -33,7 +48,7 @@ class FriendsList extends React.Component {
                     })
                 }
                 </div>
-            </div>
+            </StyledDiv>
         )
     }
 }
