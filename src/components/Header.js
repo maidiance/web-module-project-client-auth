@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { BrowserRouter as Link } from 'react-router-dom';
 
 const StyledDiv = styled.div`
     display: flex;
@@ -27,15 +28,16 @@ const StyledDiv = styled.div`
 `
 
 const Header = () => {
+    const isLoggedIn = localStorage.getItem('token');
     return(
         <div>
             <StyledDiv className='header'>
                 <h2>FRIENDS DATABASE</h2>
                 <div className='nav'>
-                    <button>LOGIN</button>
-                    <button>FRIENDLIST</button>
-                    <button>ADDFRIEND</button>
-                    <button>LOGOUT</button>
+                    <Link to='/login'><button>LOGIN</button></Link>
+                    <Link to='/friends'><button>FRIENDLIST</button></Link>
+                    <Link to='/friends/add'><button>ADDFRIEND</button></Link>
+                    <Link to='/logout'><button>LOGOUT</button></Link>
                 </div>
             </StyledDiv>
             <hr />

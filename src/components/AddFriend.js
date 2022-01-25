@@ -45,7 +45,9 @@ const StyledDiv = styled.div`
 
 class AddFriend extends React.Component {
     state={
+        id: 0,
         name: '',
+        age: 0,
         email: ''
     };
 
@@ -58,9 +60,16 @@ class AddFriend extends React.Component {
     submit = e => {
         e.preventDefault();
         const token = localStorage.getItem('token');
-        axiosWithAuth().post('/friends', {headers:{authorization: token}}, this.state)
+        const newFriend = {
+            id: Date.now(),
+            name: this.state.name,
+            age: 22,
+            email: this.state.email
+        }
+        axiosWithAuth().post('/friends', {headers:{authorization: token}}, newFriend)
             .then(resp => {
                 console.log(resp.data);
+                this.props.history.push('/friends');
             })
             .catch(err => {
                 console.error(err);
