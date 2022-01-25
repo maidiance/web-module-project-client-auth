@@ -17,9 +17,10 @@ class AddFriend extends React.Component {
 
     submit = e => {
         e.preventDefault();
-        axiosWithAuth.post('/friends', this.state)
+        const token = localStorage.getItem('token');
+        axiosWithAuth().post('/friends', {headers:{authorization: token}}, this.state)
             .then(resp => {
-                console.log(resp);
+                console.log(resp.data);
             })
             .catch(err => {
                 console.error(err);
