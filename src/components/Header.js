@@ -14,7 +14,11 @@ const StyledDiv = styled.div`
         display: flex;
         justify-content: flex-end;
     }
-    button {
+    .nav {
+        margin-top: 1%;
+    }
+    .nav a {
+        text-decoration: none;
         margin-right: 2%;
         padding: 2% 2%;
         background-color: black;
@@ -33,10 +37,10 @@ const Header = () => {
             <StyledDiv className='header'>
                 <h2>FRIENDS DATABASE</h2>
                 <div className='nav'>
-                    <a href='/login'><button>LOGIN</button></a>
-                    <a href='/friends'><button>FRIENDLIST</button></a>
-                    <a href='/friends/add'><button>ADDFRIEND</button></a>
-                    <a href='/logout'><button>LOGOUT</button></a>
+                    <a href='/login'><p>LOGIN</p></a>
+                    <a href='/friends'><p>FRIENDLIST</p></a>
+                    <a href='/friends/add'><p>ADDFRIEND</p></a>
+                    <a href='/logout'><p>LOGOUT</p></a>
                 </div>
             </StyledDiv>
             <hr />
