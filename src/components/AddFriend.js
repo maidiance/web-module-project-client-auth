@@ -9,6 +9,23 @@ class AddFriend extends React.Component {
         email: ''
     };
 
+    handleChange = e => {
+        this.setState({
+            [e.target.name]: e.target.value
+        })
+    }
+
+    submit = e => {
+        e.preventDefault();
+        axiosWithAuth.post('/friends', this.state)
+            .then(resp => {
+                console.log(resp);
+            })
+            .catch(err => {
+                console.error(err);
+            })
+    }
+
     render() {
         return(
             <div>
@@ -16,13 +33,13 @@ class AddFriend extends React.Component {
                 <form onSubmit={this.submit}>
                     <input
                         type='text'
-                        name='friendName'
+                        name='name'
                         value={this.state.name}
                         onChange={this.handleChange}
                     />
                     <input
                         type='text'
-                        name='friendEmail'
+                        name='email'
                         value={this.state.email}
                         onChange={this.handleChange}
                     />
