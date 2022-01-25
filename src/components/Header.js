@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import { BrowserRouter as Link } from 'react-router-dom';
 
 const StyledDiv = styled.div`
     display: flex;
@@ -34,10 +33,10 @@ const Header = () => {
             <StyledDiv className='header'>
                 <h2>FRIENDS DATABASE</h2>
                 <div className='nav'>
-                    <Link to='/login'><button>LOGIN</button></Link>
-                    <Link to='/friends'><button>FRIENDLIST</button></Link>
-                    <Link to='/friends/add'><button>ADDFRIEND</button></Link>
-                    <Link to='/logout'><button>LOGOUT</button></Link>
+                    <a href='/login'><button>LOGIN</button></a>
+                    <a href='/friends'><button>FRIENDLIST</button></a>
+                    <a href='/friends/add'><button>ADDFRIEND</button></a>
+                    <a href='/logout'><button>LOGOUT</button></a>
                 </div>
             </StyledDiv>
             <hr />
