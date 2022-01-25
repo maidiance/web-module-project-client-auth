@@ -1,5 +1,46 @@
 import React from 'react';
 import axios from 'axios';
+import styled from 'styled-components';
+
+const StyledDiv = styled.div`
+    display: flex;
+    flex-wrap: wrap;
+    width: 70%;
+    margin: 0 auto;
+    h1 {
+        margin: 1% auto;
+    }
+    form {
+        margin: 0 auto;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .input-container {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .input-container p {
+        margin-left: 25%;
+        margin-top: 0%;
+        margin-bottom: 0%;
+        width: 100%;
+    }
+    .input-container input {
+        width: 50%;
+        background-color: black;
+        color: white;
+        padding: 2% 0;
+        margin: 1% auto;
+    }
+    button {
+        background-color: black;
+        color: white;
+        padding: 2% 2%;
+        width: 50%;
+        margin: 0 auto;
+    }
+`
 
 class Login extends React.Component {
     state = {
@@ -34,17 +75,17 @@ class Login extends React.Component {
 
     render() {
         return (
-            <div>
+            <StyledDiv>
                 <h1>LOGIN</h1>
                 <form onSubmit={this.login}>
-                    <label>USERNAME
+                    <label className='input-container'><p>USERNAME</p>
                     <input
                         type='text'
                         name='username'
                         value={this.state.credentials.username}
                         onChange={this.handleChange}
                     /></label>
-                    <label>PASSWORD
+                    <label className='input-container'><p>PASSWORD</p>
                     <input
                         type='password'
                         name='password'
@@ -53,7 +94,7 @@ class Login extends React.Component {
                     /></label>
                     <button>SUBMIT</button>
                 </form>
-            </div>
+            </StyledDiv>
         )
     }
 }
